@@ -31,4 +31,4 @@ jobs:
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: Update base chart package
+          commit_message: Update base chart package [skip ci]
