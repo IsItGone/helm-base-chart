@@ -52,7 +52,7 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
             - name: SPRING_CONFIG_LOCATION
-              value: 'file:{{.Values.spring.config.mountPath }}'
+              value: 'file:{{.Values.spring.config.mountPath }}/'
             - name: SPRING_PROFILES_ACTIVE
               value: {{.Values.spring.profile}}
           {{- with .Values.env }}
