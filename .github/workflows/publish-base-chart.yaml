@@ -26,7 +26,7 @@ jobs:
               helm package "$dir" -d packages
             fi
           done
-          helm repo index packages/ --url https://isitgone.github.io/${{ github.event.repository.name }}/packages --merge docs/index.yaml
+          helm repo index packages/ --url https://isitgone.github.io/${{ github.event.repository.name }}/packages
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
