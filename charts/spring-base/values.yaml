@@ -29,10 +29,7 @@ spring:
   config:
     mountPath: /app/config
   application:
-    yml:
-      spring:
-        application:
-          name: spring-base
+    yml: {}
 
 ingress:
   enabled: true
