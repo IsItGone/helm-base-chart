@@ -3,9 +3,9 @@ entries:
   flutter-base:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-04-04T11:01:27.122032221Z"
+    created: "2025-04-04T19:36:11.177203036Z"
     description: A Helm chart for Kubernetes
-    digest: e396000e1d8d2cd5628c8e899c0760234022ea4fe3c423cd9be56c45fdf772a3
+    digest: ae12cb82dcd9caf2c25bebb486836f123f87008cdea341c7dce4d1477f175bfb
     name: flutter-base
     type: application
     urls:
@@ -13,8 +13,17 @@ entries:
     version: 0.1.0
   spring-base:
   - apiVersion: v2
+    created: "2025-04-04T19:36:11.177942351Z"
+    description: A Base helm chart for Spring Boot Application
+    digest: a7e83172b159977fc628ae7dce19b311183d9562ee4a9a8ed50ff0806c91f2ae
+    name: spring-base
+    type: application
+    urls:
+    - https://isitgone.github.io/helm-base-chart/packages/spring-base-0.1.0.tgz
+    version: 0.1.0
+  - apiVersion: v2
     appVersion: 0.0.0
-    created: "2025-04-04T11:01:27.122405735Z"
+    created: "2025-04-04T19:36:11.177604077Z"
     description: A Base helm chart for Spring Boot Application
     digest: 540cda0c55424caec76390f101c70a24bd7cd6c51dcaf66ec896d876a166828f
     name: spring-base
@@ -22,4 +31,4 @@ entries:
     urls:
     - https://isitgone.github.io/helm-base-chart/packages/spring-base-0.0.0.tgz
     version: 0.0.0
-generated: "2025-04-04T11:01:27.121537843Z"
+generated: "2025-04-04T19:36:11.175818682Z"
