@@ -2,20 +2,20 @@ replicaCount: 1
 image:
   pullPolicy: IfNotPresent
 
-imagePullSecrets: []
+imagePullSecrets: [ ]
 nameOverride: ""
 fullnameOverride: ""
 
 serviceAccount:
   create: true
-  annotations: {}
+  annotations: { }
   name: ""
 
-podAnnotations: {}
+podAnnotations: { }
 
-podSecurityContext: {}
+podSecurityContext: { }
 
-securityContext: {}
+securityContext: { }
 
 service:
   type: ClusterIP
@@ -31,11 +31,12 @@ spring:
   application:
     yml:
 
+
 ingress:
   enabled: true
   path: /api
 
-resources: {}
+resources: { }
 
 autoscaling:
   enabled: false
@@ -44,8 +45,8 @@ autoscaling:
   targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
 
-nodeSelector: {}
+nodeSelector: { }
 
-tolerations: []
+tolerations: [ ]
 
-affinity: {}
+affinity: { }
