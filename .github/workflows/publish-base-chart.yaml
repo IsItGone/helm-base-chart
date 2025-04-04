@@ -1,0 +1,32 @@
+name: Publish Base Chart
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Helm
+        uses: azure/setup-helm@v4
+
+      - name: Package Helm charts
+        run: |
+          mkdir -p packages
+          for dir in charts/*; do
+            if [ -d "$dir" ]; then
+              helm package "$dir" -d packages
+            fi
+          done
+          helm repo index packages/ --url https://isitgone.github.io/${{ github.event.repository.name }}/packages --merge index.yaml
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Update base chart package
