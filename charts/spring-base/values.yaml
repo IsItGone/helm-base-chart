@@ -27,11 +27,7 @@ healthPath: /actuator/health
 spring:
   profile: default
   config:
-    name: spring-config
     mountPath: /app/config
-  application:
-    yml:
-      spring:
 
 ingress:
   enabled: true
