@@ -14,7 +14,7 @@ data:
       level:
         root: INFO
 
-  {{- with .Values.spring.application.yml }}
   application-{{.Values.spring.profile}}.yml: |
+  {{- with .Values.spring.application.yml }}
     {{- toYaml . | nindent 4 }}
   {{- end }}
