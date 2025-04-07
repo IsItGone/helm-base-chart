@@ -40,14 +40,14 @@ spec:
             httpGet:
               path: {{ .Values.healthPath }}
               port: {{ .Values.service.targetPort }}
-            initialDelaySeconds: 20
-            periodSeconds: 10
+            initialDelaySeconds: {{ .Values.probe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.probe.periodSeconds }}
           readinessProbe:
             httpGet:
               path: {{ .Values.healthPath }}
               port: {{ .Values.service.targetPort }}
-            initialDelaySeconds: 20
-            periodSeconds: 10
+            initialDelaySeconds: {{ .Values.probe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.probe.periodSeconds }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           env:

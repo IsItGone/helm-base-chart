@@ -24,12 +24,16 @@ service:
 
 healthPath: /actuator/health
 
+probe:
+  initialDelaySeconds: 20
+  periodSeconds: 10
+
 spring:
   profile: default
   config:
     mountPath: /app/config
   application:
-    yml: {}
+    yml: { }
 
 ingress:
   enabled: true
