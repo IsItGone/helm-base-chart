@@ -24,7 +24,6 @@ service:
 
 ingress:
   enabled: true
-  path: /
 
 resources: {}
 
