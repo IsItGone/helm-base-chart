@@ -33,7 +33,7 @@ spring:
 
 ingress:
   enabled: true
-  path: /api
+  pathPrefix: /api
 
 resources: { }
 
