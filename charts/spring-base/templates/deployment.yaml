@@ -38,18 +38,18 @@ spec:
               protocol: TCP
           livenessProbe:
             httpGet:
-              path: {{ .Values.healthPath }}
+              path: {{ .Values.livenessProbe.healthPath }}
               port: {{ .Values.service.targetPort }}
-            initialDelaySeconds: {{ .Values.probe.initialDelaySeconds }}
-            periodSeconds: {{ .Values.probe.periodSeconds }}
-            timeoutSeconds: {{ .Values.probe.timeoutSeconds }}
+            initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
+            timeoutSeconds: {{ .Values.livenessProbe.timeoutSeconds }}
           readinessProbe:
             httpGet:
-              path: {{ .Values.healthPath }}
+              path: {{ .Values.readinessProbe.healthPath }}
               port: {{ .Values.service.targetPort }}
-            initialDelaySeconds: {{ .Values.probe.initialDelaySeconds }}
-            periodSeconds: {{ .Values.probe.periodSeconds }}
-            timeoutSeconds: {{ .Values.probe.timeoutSeconds }}
+            initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
+            timeoutSeconds: {{ .Values.readinessProbe.timeoutSeconds }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           env:

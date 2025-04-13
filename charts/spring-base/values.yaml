@@ -22,11 +22,17 @@ service:
   port: 80
   targetPort: 8080
 
-healthPath: /actuator/health
-
-probe:
+livenessProbe:
+  healthPath: /actuator/health/liveness
   initialDelaySeconds: 20
   periodSeconds: 10
+  timeoutSeconds: 1
+
+readinessProbe:
+  healthPath: /actuator/health/readiness
+  initialDelaySeconds: 20
+  periodSeconds: 10
+  timeoutSeconds: 1
 
 spring:
   profile: default
