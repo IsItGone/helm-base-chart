@@ -42,12 +42,14 @@ spec:
               port: {{ .Values.service.targetPort }}
             initialDelaySeconds: {{ .Values.probe.initialDelaySeconds }}
             periodSeconds: {{ .Values.probe.periodSeconds }}
+            timeoutSeconds: {{ .Values.probe.timeoutSeconds }}
           readinessProbe:
             httpGet:
               path: {{ .Values.healthPath }}
               port: {{ .Values.service.targetPort }}
             initialDelaySeconds: {{ .Values.probe.initialDelaySeconds }}
             periodSeconds: {{ .Values.probe.periodSeconds }}
+            timeoutSeconds: {{ .Values.probe.timeoutSeconds }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
