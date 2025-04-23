@@ -2,4 +2,4 @@ apiVersion: v2
 name: flutter-base
 description: A Base helm chart for Flutter Web Application
 type: application
-version: 0.1.0
+version: 0.1.1
