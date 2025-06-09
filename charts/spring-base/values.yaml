@@ -44,6 +44,8 @@ spring:
 ingress:
   enabled: true
   pathPrefix: /api
+  host: isitgone.store
+  https: true
 
 resources: { }
 

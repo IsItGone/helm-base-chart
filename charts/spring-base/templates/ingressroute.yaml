@@ -5,11 +5,15 @@ metadata:
   name: {{ include "spring-base.fullname" . }}
 spec:
   entryPoints:
-    - web
+    - {{ cond "websecure" "web" .Values.ingress.https }}
   routes:
     - match: Host(`{{ .Values.ingress.host }}`) && PathPrefix(`{{ .Values.ingress.pathPrefix }}`)
       kind: Rule
       services:
         - name: {{ include "spring-base.fullname" . }}
           port: {{ .Values.service.port }}
+  {{- if .Values.ingress.https }}
+  tls:
+    certResolver: {{ default "default" .Values.ingress.certResolver }}
+  {{- end }}
 {{- end }}
