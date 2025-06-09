@@ -5,7 +5,7 @@ metadata:
   name: {{ include "spring-base.fullname" . }}
 spec:
   entryPoints:
-    - {{ cond "websecure" "web" .Values.ingress.https }}
+    - {{ .Values.ingress.entryPoints }}
   routes:
     - match: Host(`{{ .Values.ingress.host }}`) && PathPrefix(`{{ .Values.ingress.pathPrefix }}`)
       kind: Rule

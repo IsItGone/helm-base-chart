@@ -5,7 +5,7 @@ metadata:
   name: {{ include "flutter-base.fullname" . }}
 spec:
   entryPoints:
-    - {{ cond "websecure" "web" .Values.ingress.https }}
+    - {{ .Values.ingress.entryPoints }}
   routes:
     - match: Host(`{{ .Values.ingress.host }}`)
       kind: Rule

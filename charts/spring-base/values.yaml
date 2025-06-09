@@ -46,6 +46,7 @@ ingress:
   pathPrefix: /api
   host: isitgone.store
   https: true
+  entryPoints: websecure
 
 resources: { }
 
